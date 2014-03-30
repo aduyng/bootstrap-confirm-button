@@ -17,9 +17,10 @@
         var revert = function (button) {
             var b = $(button);
             var settings = b.data('settings');
-
-            b.removeClass(settings.class);
-            b.find('.bcb-label').text(settings.cachedMessage);
+            if( settings ) {
+                b.removeClass(settings.class);
+                b.find('.bcb-label').text(settings.cachedMessage);
+            }
             $('html').unbind('click', monitor);
         };
 
