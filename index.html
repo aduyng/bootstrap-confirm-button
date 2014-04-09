@@ -1,31 +1,112 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Bootstrap Confirm Button</title>
+    <meta name="description" content="A plugin for showing in-place confirmation before proceed.">
+    <link rel="author" href="https://plus.google.com/aduyng"/>
+    <meta property="og:title" content="Bootstrap Confirm Button"/>
+    <meta property="og:url" content="http://aduyng.github.io/bootstrap-confirm-button/"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="A plugin for showing in-place confirmation before proceed."/>
+    <meta property="fb:admins" content="aduyng"/>
+    <meta name="twitter:card" content="A plugin for showing in-place confirmation before proceed.">
+    <meta name="twitter:url" content="http://aduyng.github.io/bootstrap-confirm-button/">
+    <meta name="twitter:title" content="Bootstrap Confirm Button">
+    <meta name="twitter:description" content="A plugin for showing in-place confirmation before proceed.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body>
+<div class="navbar navbar-default">
+    <div class="container">
+        <a class="navbar-brand" href="#">bootstrap-confirm-button</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://plus.google.com/aduyng" target="_blank">G+</a></li>
+            <li><a href="https://www.linkedin.com/in/aduyng" target="_blank">LinkedIn</a></li>
+        </ul>
+    </div>
+</div>
 
-<button class="btn btn-warning bcb-button"><i class="glyphicon glyphicon-trash"></i> <span
-        class="bcb-label">Delete</span></button>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Bootstrap Confirm Button</h1>
 
-<button class="btn bcb-button" data-bcb-class="btn-primary"><i class="glyphicon glyphicon-trash"></i> <span
-        class="bcb-label">Delete</span></button>
+        <p class="lead">A plugin for showing in-place confirmation before proceed.</p>
 
-<button class="btn bcb-button" data-bcb-class="btn-danger" data-bcb-message="Are you sure?"><i class="glyphicon glyphicon-trash"></i> <span
-        class="bcb-label">Delete</span></button>
+        <div><a class="btn btn-primary" href="https://github.com/aduyng/bootstrap-confirm-button/archive/master.zip"><span class="glyphicon glyphicon-download"></span> Download</a> <a
+                class="btn btn-success" href="https://github.com/aduyng/bootstrap-confirm-button" target="_blank"><span class="glyphicon glyphicon-chevron-right"></span> Github Repo</a></div>
+    </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="bootstrap-confirm-button.js"></script>
-<script type="text/javascript">
-    $(function () {
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Demo</h3>
+
+            <p> Click this button to see the result
+                <button class="btn btn-warning bcb-button"><i class="glyphicon glyphicon-trash"></i> <span class="bcb-label">Delete</span></button>
+            </p>
+            <h4>Dependencies</h4>
+            <ol>
+                <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
+                <li><a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a></li>
+            </ol>
+
+            <h3>Usage</h3>
+            <h4>Include the dependencies</h4>
+
+            <p>Include Bootstrap style, jQuery, and <strong>bootstrap-confirm-button.js</strong></p>
+            <ol>
+                <li><code>&lt;link href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</code></li>
+                <li><code>&lt;script type='text/javascript' src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;</code></li>
+                <li><code>&lt;script type='text/javascript' src=&quot;bootstrap-confirm-button.js&quot;&gt;&lt;/script&gt;</code></li>
+            </ol>
+            <h4>Insert HTML</h4>
+
+            <p>Insert a button into your page. Remember to use <strong>bcb-button</strong> for your button class name and <strong>bcb-label</strong> for the label</p>
+
+            <code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-warning bcb-button"</span><span class="nt">&gt;&lt;i</span> <span
+                    class="na">class=</span><span class="s">"glyphicon glyphicon-trash"</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="nt">&lt;span</span> <span
+                    class="na">class=</span><span class="s">"bcb-label"</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+            </code>
+            <h4>Call <strong>bootstrapConfirmButton(options)</strong></h4>
+
+            <p><code><pre>
+                $('.bcb-button').click(function (event) {
+                    //this function will be called when user confirmed.
+                });
+                $('.bcb-button').bootstrapConfirmButton();
+            </pre>
+            </code></p>
+
+            <h3>Options</h3>
+            <dl class="dl-horizontal">
+                <dt>class</dt>
+                <dd>The class to be added to the button on the first click. Default to <code>btn-danger</code></dd>
+                <dt>message</dt>
+                <dd>Message to be display on bcb-label.</dd>
+            </dl>
+        </div>
+
+    </div>
+
+</div>
+
+<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type='text/javascript' src="bootstrap-confirm-button.js"></script>
+
+<script type='text/javascript'>
+    $(document).ready(function () {
         $('.bcb-button').click(function (event) {
             alert("You have confirmed to proceed");
         });
         $('.bcb-button').bootstrapConfirmButton();
     });
 </script>
+<a href="https://github.com/aduyng"><img style="position: absolute; top: 0; right: 0; border: 0;"
+                                         src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+                                         alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 </body>
 </html>
